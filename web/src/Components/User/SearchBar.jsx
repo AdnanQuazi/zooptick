@@ -14,12 +14,14 @@ import variables from "../../styles/variables.module.scss";
 import { useEffect, useRef, useState } from "react";
 import "../../styles/searchbar.css";
 import { useMutation } from "@tanstack/react-query";
+import { useTranslation } from "react-i18next";
 import { getCurrentLocation, searchStores } from "../../Api/api";
 import { useNavigate } from "react-router-dom";
 import useOutsideClick from "./useOutsideClick";
 
 function SearchBar() {
-    const navigate = useNavigate()
+  const { t } = useTranslation();
+  const navigate = useNavigate();
   const [currentLocation, setCurrentLocation] = useState(
     localStorage.getItem("currentLocation") || null
   );
@@ -100,7 +102,7 @@ function SearchBar() {
       <div className="search-products-container">
         <div className="location-container">
           <IconMapPinFilled size={22} color={variables.accent_color} />
-          <p>{currentLocation ? currentLocation : "Location..."}</p>
+          <p>{currentLocation ? currentLocation : t("nav.selectLocation")}</p>
           <button
             className="icon-button-transparent"
             onClick={handleLocationMenu}
@@ -122,14 +124,14 @@ function SearchBar() {
                 stroke={1.2}
                 color={variables.accent_color}
               />
-              Detect Current Location
+              {t("nav.useCurrentLocation")}
             </button>
           </div>
         </div>
 
         <hr></hr>
         <div className="search-box-products">
-          <input placeholder="Search for Products..." onKeyDown={handleKeyDown}></input>
+          <input placeholder={t("nav.searchPlaceholder")} onKeyDown={handleKeyDown}></input>
           <button className="search-button">
             <IconSearch size={22} />
           </button>
@@ -139,7 +141,7 @@ function SearchBar() {
       <div className="search-store-container">
         <div className="search-box-store">
           <input
-            placeholder="Search for Stores..."
+            placeholder={t("hero.cta") || "Search for Stores..."}
             onChange={handleStoreChange}
           ></input>
           <button className="search-button">
@@ -171,7 +173,7 @@ function SearchBar() {
                               : variables.error
                           }
                         />
-                        {store.storeOpen ? "Open Now" : "Closed Now"}
+                        {store.storeOpen ? t("store.openNow") : t("store.closed")}
                       </p>
                     </div>
                     <p className="contact-number">{store.contactNumber}</p>

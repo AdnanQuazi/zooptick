@@ -3,38 +3,31 @@ import hero from "../assets/hero.jpg";
 import variables from "../styles/variables.module.scss";
 import SearchBar from "../Components/User/SearchBar";
 import { recommendProducts } from "../Api/api";
+import { useTranslation } from "react-i18next";
+
 function Hero() {
-  const navigate = useNavigate()
+  const { t } = useTranslation();
+  const navigate = useNavigate();
   function handleBrowseProducts(){
-    navigate("/?rawQuery=tshirts")
+    navigate("/?rawQuery=tshirts");
   }
-  const res = recommendProducts()
-  console.log(res)
+  const res = recommendProducts();
   return (
     <>
-      
       <div className="hero-container">
         <div className="wrapper">
           <div className="hero">
-          
             <div className="hero-header">
               <h1>
-                Discover Your Perfect<br></br>
-                <span style={{ color: variables.accent_color }}>Product</span>{" "}
-                Today
+                {t("hero.title")}
               </h1>
               <p>
-                At Zooptick, we combine the ease of online shopping with the
-                personal touch of in-store visits.
+                {t("hero.subtitle")}
               </p>
-              {/* <div className="button-group">
-                <button onClick={handleBrowseProducts} className="normal-button" style={{fontSize : '1.6rem'}}>Browse Products</button>
-                <Link to="/onboard" className="become-a-seller">Become a Seller</Link>
-              </div> */}
             </div>
             <SearchBar />
             <div className="hero-image-container">
-              <img src={hero}></img>
+              <img src={hero} alt="Zooptick Hero"></img>
             </div>
           </div>
         </div>

@@ -1,0 +1,129 @@
+.language-switcher-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+.language-switcher-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 6px 12px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  backdrop-filter: blur(8px);
+}
+
+.language-switcher-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.28);
+  transform: translateY(-1px);
+}
+
+.language-switcher-btn:active {
+  transform: translateY(0);
+}
+
+.lang-icon {
+  opacity: 0.85;
+}
+
+.lang-flag {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.lang-text {
+  letter-spacing: 0.2px;
+}
+
+.lang-chevron {
+  transition: transform 0.2s ease;
+  opacity: 0.7;
+}
+
+.lang-chevron.open {
+  transform: rotate(180deg);
+}
+
+.language-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 140px;
+  background: #1e1e24;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 6px;
+  z-index: 1000;
+  animation: dropdownFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* RTL positioning for dropdown */
+[dir="rtl"] .language-dropdown-menu {
+  right: auto;
+  left: 0;
+}
+
+.language-dropdown-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: #e2e8f0;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  gap: 10px;
+  transition: background 0.15s ease, color 0.15s ease;
+  text-align: left;
+}
+
+[dir="rtl"] .language-dropdown-item {
+  text-align: right;
+}
+
+.language-dropdown-item:hover {
+  background: rgba(168, 133, 232, 0.15);
+  color: #ffffff;
+}
+
+.language-dropdown-item.selected {
+  background: rgba(168, 133, 232, 0.25);
+  color: #c4b5fd;
+  font-weight: 600;
+}
+
+.item-flag {
+  font-size: 16px;
+}
+
+.item-name {
+  flex: 1;
+}
+
+.item-check {
+  color: #a885e8;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

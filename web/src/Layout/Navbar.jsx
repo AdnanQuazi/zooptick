@@ -23,6 +23,7 @@ import {
 import logo from "../assets/zooptick.png"
 import profile from "../assets/avatar.jpg";
 import { useContext, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { AuthContext } from "../Context/AuthContext";
 import { Link, Navigate } from "react-router-dom";
 import variables from "../styles/variables.module.scss";
@@ -30,7 +31,10 @@ import { useNavigate } from "react-router-dom";
 import { replace } from "formik";
 import { useMutation } from "@tanstack/react-query";
 import { getCurrentLocation } from "../Api/api";
+import LanguageSwitcher from "../Components/Common/LanguageSwitcher";
+
 function Navbar() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [profileMenu, setProfileMenu] = useState(false);
   const [mobileNav, setMobileNav] = useState(false);
@@ -209,25 +213,25 @@ function Navbar() {
               <ul>
                 <li>
                   <Link to='/wishlist'>
-                    <IconHeart size={22} stroke={1.5} /> Wishlist
+                    <IconHeart size={22} stroke={1.5} /> {t("nav.wishlist")}
                   </Link>
                 </li>
                 <hr></hr>
                 <li>
                   <Link to="/bookings">
-                    <IconBuildingStore size={22} stroke={1.5} /> Bookings
+                    <IconBuildingStore size={22} stroke={1.5} /> {t("nav.bookings")}
                   </Link>
                 </li>
                 <hr></hr>
                 <li>
                   <Link to='/forgot-password'>
-                    <IconLock size={22} stroke={1.5} /> Change Password
+                    <IconLock size={22} stroke={1.5} /> {t("auth.forgotPassword")}
                   </Link>
                 </li>
                 <hr></hr>
                 <li>
                   <a className="logout-button" onClick={logoutUser}>
-                    <IconLogout size={22} stroke={1.5} /> Logout
+                    <IconLogout size={22} stroke={1.5} /> {t("nav.logout")}
                   </a>
                 </li>
                 <hr></hr>
@@ -244,7 +248,7 @@ function Navbar() {
                 navigate("/login");
               }}
             >
-              Login
+              {t("nav.login")}
             </button>
             <hr></hr>
           </>
@@ -255,14 +259,14 @@ function Navbar() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about-us">About Us</Link>
+              <Link to="/about-us">{t("footer.aboutUs")}</Link>
             </li>
             <li>
               {user?.role == "merchant" ? (
-                <Link to="/dashboard/currentOrders">Dashboard</Link>
+                <Link to="/dashboard/currentOrders">{t("nav.merchantDashboard")}</Link>
               ) : (
                 <Link to="/onboard" style={{ color: variables.accent_color }}>
-                  Become a Seller
+                  {t("nav.sellOnZooptick")}
                 </Link>
               )}
             </li>
@@ -339,26 +343,27 @@ function Navbar() {
             <div className="nav-links-container">
               <ul>
                 <li>
-                  <Link to="/">Home</Link>
+                  <Link to="/">{t("nav.orders") ? "Home" : "Home"}</Link>
                 </li>
                 <li>
-                  <Link to="/about-us">About us</Link>
+                  <Link to="/about-us">{t("footer.aboutUs")}</Link>
                 </li>
                 <li>
                   {user?.role == "merchant" ? (
-                    <Link to="/dashboard/currentOrders">Dashboard</Link>
+                    <Link to="/dashboard/currentOrders">{t("nav.merchantDashboard")}</Link>
                   ) : (
                     <Link
                       to="/onboard"
                       style={{ color: variables.accent_color }}
                     >
-                      Become a Seller
+                      {t("nav.sellOnZooptick")}
                     </Link>
                   )}
                 </li>
               </ul>
             </div>
             <div className="nav-buttons-container">
+              <LanguageSwitcher />
               {user ? (
                 <>
                   <div
@@ -382,26 +387,26 @@ function Navbar() {
                       <ul>
                         <li>
                           <Link to="/wishlist">
-                            <IconHeart size={22} stroke={1.5} /> Wishlist
+                            <IconHeart size={22} stroke={1.5} /> {t("nav.wishlist")}
                           </Link>
                         </li>
                         <hr></hr>
                         <li>
                           <Link to="/bookings">
                             <IconBuildingStore size={22} stroke={1.5} />{" "}
-                            Bookings
+                            {t("nav.bookings")}
                           </Link>
                         </li>
                         <hr></hr>
                         <li>
                           <Link to="/forgot-password">
-                            <IconLock size={22} stroke={1.5} /> Change Password
+                            <IconLock size={22} stroke={1.5} /> {t("auth.forgotPassword")}
                           </Link>
                         </li>
                         <hr></hr>
                         <li>
                           <a className="logout-button" onClick={logoutUser}>
-                            <IconLogout size={22} stroke={1.5} /> Logout
+                            <IconLogout size={22} stroke={1.5} /> {t("nav.logout")}
                           </a>
                         </li>
                       </ul>
@@ -434,7 +439,7 @@ function Navbar() {
                       navigate("/login");
                     }}
                   >
-                    Login
+                    {t("nav.login")}
                   </button>
                 </>
               )}
@@ -445,6 +450,7 @@ function Navbar() {
               <img onClick={()=>{navigate("/")}} className="logo" style={{cursor : "pointer"}} src={logo}></img>
             </div>
             <div className="nav-buttons-container">
+              <LanguageSwitcher />
               <button
                 type="button"
                 className="icon-button-transparent"
