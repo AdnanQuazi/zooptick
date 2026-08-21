@@ -59,6 +59,16 @@ const auth = require("./middleware/auth");
 const adminAuth = require("./middleware/adminAuth");
 const businessAuth = require("./middleware/businessAuth");
 const otpAuth = require("./middleware/otpAuth");
+const {
+  generateImageEmbedding,
+  generateEmbeddingFromUrl,
+  findVisuallySimilarProducts,
+} = require("./services/embedding.service");
+
+const memoryUpload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 10 * 1024 * 1024 }, // 10MB limit
+});
 const { resolveSoa } = require("dns");
 const { log } = require("console");
 
@@ -3420,6 +3430,91 @@ app.get("/location", async (req, res, next) => {
       street: combinedString,
     });
   } catch (error) {
+    next(error);
+  }
+});
+
+/**
+ * REVERSE IMAGE SEARCH ENDPOINT
+ * Accepts an uploaded image (multipart) or imageUrl and returns visually similar products from catalog
+ */
+app.post("/reverse-image-search", memoryUpload.single("image"), async (req, res, next) => {
+  try {
+    let queryVector = [];
+
+    if (req.file) {
+      queryVector = await generateImageEmbedding(req.file.buffer, req.file.mimetype);
+    } else if (req.body.imageUrl) {
+      queryVector = await generateEmbeddingFromUrl(req.body.imageUrl);
+    } else {
+      return res.status(400).json({ success: false, message: "Please provide an image file or imageUrl" });
+    }
+
+    if (!queryVector || queryVector.length === 0) {
+      return res.status(500).json({ success: false, message: "Could not generate visual embedding for the image" });
+    }
+
+    // Retrieve active businesses that have products
+    const businesses = await BusinessData.find(
+      { "products.0": { $exists: true } },
+      "shopName shopLogo address contactNumber products"
+    ).lean();
+
+    const matches = findVisuallySimilarProducts(queryVector, businesses, 24, 0.4);
+
+    res.status(200).json({
+      success: true,
+      totalMatches: matches.length,
+      results: matches,
+    });
+  } catch (error) {
+    console.error("[ReverseImageSearch] Error:", error);
+    next(error);
+  }
+});
+
+/**
+ * ADMIN: Sync Image Embeddings for existing products in MongoDB
+ */
+app.post("/admin/sync-image-embeddings", adminAuth, async (req, res, next) => {
+  try {
+    const businesses = await BusinessData.find({ "products.0": { $exists: true } });
+    let totalUpdated = 0;
+
+    for (const business of businesses) {
+      let modified = false;
+
+      for (const product of business.products) {
+        if (product.variants && Array.isArray(product.variants)) {
+          for (const variant of product.variants) {
+            if (!variant.imageEmbedding || variant.imageEmbedding.length === 0) {
+              const imageUrl =
+                (variant.Images && variant.Images[0]) || variant.sharedImagePath;
+              if (imageUrl) {
+                const vector = await generateEmbeddingFromUrl(imageUrl);
+                if (vector && vector.length > 0) {
+                  variant.imageEmbedding = vector;
+                  modified = true;
+                  totalUpdated++;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      if (modified) {
+        await business.save();
+      }
+    }
+
+    res.status(200).json({
+      success: true,
+      message: `Image embeddings synced successfully for ${totalUpdated} product variants`,
+      totalUpdated,
+    });
+  } catch (error) {
+    console.error("[SyncImageEmbeddings] Error:", error);
     next(error);
   }
 });

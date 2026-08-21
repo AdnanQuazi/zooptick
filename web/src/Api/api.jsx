@@ -198,3 +198,21 @@ export const searchStores = async (queryKey) => {
   const { data } = await axios.get(`${url}/search-stores?${queryParams}`, headers);
   return data;
 };
+
+export const reverseImageSearch = async (imageFileOrUrl) => {
+  if (imageFileOrUrl instanceof File || imageFileOrUrl instanceof Blob) {
+    const formData = new FormData();
+    formData.append("image", imageFileOrUrl);
+    const { data } = await axios.post(`${url}/reverse-image-search`, formData, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+    return data;
+  } else {
+    const { data } = await axios.post(
+      `${url}/reverse-image-search`,
+      { imageUrl: imageFileOrUrl },
+      headers
+    );
+    return data;
+  }
+};

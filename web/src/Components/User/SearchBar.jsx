@@ -1,4 +1,5 @@
 import {
+  IconCamera,
   IconCaretDownFilled,
   IconCurrentLocation,
   IconMapPin,
@@ -18,10 +19,12 @@ import { useTranslation } from "react-i18next";
 import { getCurrentLocation, searchStores } from "../../Api/api";
 import { useNavigate } from "react-router-dom";
 import useOutsideClick from "./useOutsideClick";
+import ImageSearchModal from "./ImageSearchModal";
 
 function SearchBar() {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const [isImageSearchOpen, setIsImageSearchOpen] = useState(false);
   const [currentLocation, setCurrentLocation] = useState(
     localStorage.getItem("currentLocation") || null
   );
@@ -132,6 +135,14 @@ function SearchBar() {
         <hr></hr>
         <div className="search-box-products">
           <input placeholder={t("nav.searchPlaceholder")} onKeyDown={handleKeyDown}></input>
+          <button
+            type="button"
+            className="camera-search-btn"
+            onClick={() => setIsImageSearchOpen(true)}
+            title={t("imageSearch.buttonTooltip") || "Visual Image Search"}
+          >
+            <IconCamera size={22} />
+          </button>
           <button className="search-button">
             <IconSearch size={22} />
           </button>
@@ -187,6 +198,12 @@ function SearchBar() {
           ""
         )}
       </div>
+
+      {/* REVERSE IMAGE SEARCH MODAL */}
+      <ImageSearchModal
+        isOpen={isImageSearchOpen}
+        onClose={() => setIsImageSearchOpen(false)}
+      />
     </div>
   );
 }

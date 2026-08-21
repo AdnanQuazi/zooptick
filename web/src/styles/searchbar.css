@@ -12,6 +12,26 @@
   text_gray: #c8c8c8;
 }
 
+.camera-search-btn {
+  background: transparent;
+  border: none;
+  color: #a885e8;
+  padding: 0.6rem;
+  margin: 0 0.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.18s ease;
+}
+
+.camera-search-btn:hover {
+  background: rgba(168, 133, 232, 0.15);
+  transform: scale(1.08);
+}
+
+
 .search-box-group {
   display: flex;
   flex-direction: row;

@@ -143,5 +143,22 @@
     "terms": "Terms & Conditions",
     "refundPolicy": "Refund Policy",
     "allRightsReserved": "All rights reserved."
+  },
+  "imageSearch": {
+    "title": "Visual Product Search",
+    "subtitle": "Upload or snap a photo to find matching products instantly",
+    "buttonTooltip": "Search by Image",
+    "dropText": "Drag & drop your product image here",
+    "orBrowse": "or choose from your files",
+    "browseFiles": "Browse Images",
+    "useCamera": "Use Camera",
+    "takePhoto": "Snap Photo",
+    "analyzing": "Analyzing visual features...",
+    "newPhoto": "Try Another Photo",
+    "matchedProducts": "Visual Matches Found",
+    "match": "Match",
+    "noMatches": "No close visual matches found in current store catalog. Try adjusting the photo lighting or angle.",
+    "cameraError": "Could not access camera. Please upload an image file instead.",
+    "searchError": "Visual search failed. Please try a different photo format."
   }
 }

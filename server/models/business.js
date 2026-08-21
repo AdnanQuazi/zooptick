@@ -31,6 +31,7 @@ const dummy = {
 const variantSchema = new mongoose.Schema({
   sharedImagePath: { type: String, required: true },
   Images: [{ type: String, required: true }],
+  imageEmbedding: { type: [Number], default: [] },
   additionalFields: { type: mongoose.Schema.Types.Mixed }, // Allows any additional fields
 });
 
