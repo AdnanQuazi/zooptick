@@ -59,7 +59,7 @@ function Product({ data, modal, setModal, activateProduct, setToast , loadEditOp
       <div className="product-image-container">
         <img
           draggable="false"
-          src={data.variants[0].Images[0]}
+          src={data?.variants?.[0]?.Images?.[0] || ""}
         ></img>
         <div className="rating-container">
           <span>
@@ -110,8 +110,8 @@ function Product({ data, modal, setModal, activateProduct, setToast , loadEditOp
         <h3 className="product-title">{data.productName}</h3>
         <h4 className="product-desc">{data.desc}</h4>
         <div className="product-price">
-          <span className="product-discount">Rs. {parseFloat(data.variants[0].sellingPrice)}</span>
-          <span className="product-strikePrice">Rs. {data.variants[0].MRP}</span>
+          <span className="product-discount">Rs. {parseFloat(data?.variants?.[0]?.sellingPrice || 0)}</span>
+          <span className="product-strikePrice">Rs. {data?.variants?.[0]?.MRP || 0}</span>
         </div>
         <div className="location-div">
         <IconLocationPin size={15} stroke={2}></IconLocationPin>

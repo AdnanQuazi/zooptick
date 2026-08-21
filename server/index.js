@@ -1826,7 +1826,8 @@ app.post("/addProduct", auth, upload.any(), async (req, res, next) => {
         req.files,
         req.body
       );
-      updatedBody.variants.forEach((variant, index) => {
+      for (let index = 0; index < updatedBody.variants.length; index++) {
+        const variant = updatedBody.variants[index];
         const path = variant.sharedImagePath;
         updatedBody.variants[index]._id = new mongoose.Types.ObjectId();
         const MRP = parseFloat(variant.MRP).toFixed(2);
@@ -1847,7 +1848,20 @@ app.post("/addProduct", auth, upload.any(), async (req, res, next) => {
           updatedBody.variants[index].Images = sharedImage;
           console.log(sharedImage);
         }
-      });
+
+        // Generate AI Visual Embedding for search
+        try {
+          const imageUrl = (updatedBody.variants[index].Images && updatedBody.variants[index].Images[0]);
+          if (imageUrl) {
+            const vector = await generateEmbeddingFromUrl(imageUrl);
+            if (vector && vector.length > 0) {
+              updatedBody.variants[index].imageEmbedding = vector;
+            }
+          }
+        } catch (err) {
+          console.error("Failed to generate embedding during product add:", err);
+        }
+      }
 
       // function toCapitalizedWords(str) {
       //   return str
