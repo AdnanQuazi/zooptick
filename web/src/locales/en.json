@@ -22,9 +22,15 @@
   },
   "hero": {
     "title": "Discover Local Stores & Products Near You",
-    "subtitle": "Shop in-store inventory online with instant pickup & local delivery across UAE, Saudi Arabia & India.",
+    "subtitle": "Shop in-store inventory online with instant pickup across UAE, Saudi Arabia & India.",
     "cta": "Explore Stores",
-    "bannerTag": "Hyperlocal Shopping Experience"
+    "bannerTag": "Hyperlocal Shopping Experience",
+    "info1Title": "From Click To Pick In Hours",
+    "info1Desc": "The days of searching offline/online stores for your favourite or necessary things and waiting days for delivery are over. Shop offline in a SMART way with SMART choices and SMOOTHER shopping",
+    "info2Title": "Shop From Your Favourite Store",
+    "info2Desc": "Indulge in offline retail therapy like never before. <br /> The days when a certain thing required faith are long gone. You may now shop with ease at your favourite and reliable store thanks to ZOOPTICK",
+    "info3Title": "No Longer Restrictions On Order Based On Location.",
+    "info3Desc": "There is no longer a need to limit yourself to your shop's location. Now you can receive orders from anywhere in your city"
   },
   "howItWorks": {
     "title": "How Zooptick Works",
@@ -108,6 +114,7 @@
     "signupSubtitle": "Join thousands of shoppers and local stores",
     "email": "Email Address",
     "password": "Password",
+    "confirmPassword": "Confirm Password",
     "fullName": "Full Name",
     "phone": "Phone Number",
     "countryCode": "Country Code",
@@ -143,6 +150,19 @@
     "terms": "Terms & Conditions",
     "refundPolicy": "Refund Policy",
     "allRightsReserved": "All rights reserved."
+  },
+  "merchantProfile": {
+    "title": "Your Account",
+    "personalInfo": "Personal Information",
+    "ownerName": "Owner Name",
+    "shopName": "Shop Name",
+    "contactNumber": "Contact Number",
+    "addressTitle": "Address",
+    "state": "State",
+    "city": "City",
+    "address": "Address",
+    "edit": "EDIT",
+    "saveChanges": "SAVE CHANGES"
   },
   "imageSearch": {
     "title": "Visual Product Search",

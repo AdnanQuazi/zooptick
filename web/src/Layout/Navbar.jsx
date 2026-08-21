@@ -256,7 +256,7 @@ function Navbar() {
         <div className="nav-links-container">
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">{t("nav.home")}</Link>
             </li>
             <li>
               <Link to="/about-us">{t("footer.aboutUs")}</Link>
@@ -343,7 +343,7 @@ function Navbar() {
             <div className="nav-links-container">
               <ul>
                 <li>
-                  <Link to="/">{t("nav.orders") ? "Home" : "Home"}</Link>
+                  <Link to="/">{t("nav.home")}</Link>
                 </li>
                 <li>
                   <Link to="/about-us">{t("footer.aboutUs")}</Link>

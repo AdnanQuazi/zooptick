@@ -2,7 +2,10 @@ import variables from "../styles/variables.module.scss";
 import marketing from "../assets/marketing.jpg";
 import booknow from "../assets/booknow.jpg";
 import favstore from "../assets/favstore.jpg";
+import { useTranslation } from "react-i18next";
+
 function HeroInfo() {
+  const { t } = useTranslation();
   return (
     <>
       <div className="hero-info-container">
@@ -10,14 +13,10 @@ function HeroInfo() {
           <div className="hero-info">
             <div className="hero-info-header">
               <h1>
-                From Click To Pick In Hours
+                {t("hero.info1Title")}
                 <span style={{ color: variables.accent_color }}></span>
               </h1>
-              <p>
-                The days of searching offline/online stores for your favourite
-                or necessary things and waiting days for delivery are over. Shop
-                offline in a SMART way with SMART choices and SMOOTHER shopping
-              </p>
+              <p>{t("hero.info1Desc")}</p>
             </div>
             <div className="hero-info-image-container">
               <img src={marketing}></img>
@@ -33,15 +32,14 @@ function HeroInfo() {
             </div>
             <div className="hero-info-header">
               <h1>
-                Shop From Your Favourite Store
+                {t("hero.info2Title")}
                 <span style={{ color: variables.accent_color }}></span>
               </h1>
-              <p>
-                Indulge in offline retail therapy like never before. <br /> The
-                days when a ceratin thing required faith are long gone. You may
-                now shop with ease at your favourite and reliable store thanks
-                to ZOOPTICK
-              </p>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: t("hero.info2Desc"),
+                }}
+              ></p>
             </div>
           </div>
         </div>
@@ -51,12 +49,10 @@ function HeroInfo() {
           <div className="hero-info">
             <div className="hero-info-header">
               <h1>
-                No Longer Restrictions On Order Based On Location.
+                {t("hero.info3Title")}
                 <span style={{ color: variables.accent_color }}></span>
               </h1>
-              <p>
-               There is no longer a need to limit yourself to your shop's location. Now you can receive orders from anywhere in your city
-              </p>
+              <p>{t("hero.info3Desc")}</p>
             </div>
             <div className="hero-info-image-container">
               <img src={favstore}></img>

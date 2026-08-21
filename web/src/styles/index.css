@@ -445,7 +445,12 @@ nav .nav-buttons-container .profile-tab-menu .profile-pic-name-wrapper .profile-
   nav .nav-mobile-contents {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0 2rem;
+  }
+  nav .nav-mobile-contents .logo {
+    height: 4rem;
+    width: auto;
   }
   .search-box-mobile {
     position: absolute;

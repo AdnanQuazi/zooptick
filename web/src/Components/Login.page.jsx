@@ -10,6 +10,8 @@ import "../styles/login.css";
 import variables from "../styles/variables.module.scss";
 import { loginSchema } from "../schemas/User.Login";
 import { IconEye, IconEyeClosed } from "@tabler/icons-react";
+import { useTranslation } from "react-i18next";
+
 const initialValues = {
   email: "",
   password: "",
@@ -17,6 +19,7 @@ const initialValues = {
 
 function Login() {
   const { loginUser } = useContext(AuthContext);
+  const { t } = useTranslation();
   const [disableButton, setDisableButton] = useState(false);
   const [showPassword,setShowPassword] = useState(false)
   const [toast, setToast] = useState({
@@ -76,13 +79,13 @@ function Login() {
           <div className="login-container">
             <div className="login">
               <div className="greetings-div">
-                <h1 className="login-heading">Welcome Back!</h1>
-                <small className="login-info">Please enter your details</small>
+                <h1 className="login-heading">{t("auth.loginTitle")}</h1>
+                <small className="login-info">{t("auth.loginSubtitle")}</small>
               </div>
             
                 <form onSubmit={handleSubmit} className="form-container">
                   <div className="input-wrapper-text">
-                    <label htmlFor="email">E-Mail</label>
+                    <label htmlFor="email">{t("auth.email")}</label>
                     <input
                       name="email"
                       value={values.email}
@@ -102,7 +105,7 @@ function Login() {
                   </p>
                   </div>
                   <div className="input-wrapper-text">
-                  <label htmlFor="password">Password</label>
+                  <label htmlFor="password">{t("auth.password")}</label>
                   <div className="input-with-button">
                     <input
                       name="password"
@@ -130,12 +133,12 @@ function Login() {
                     className="normal-button submit-button"
                     disabled={disableButton}
                   >
-                    Log In
+                    {t("auth.loginBtn")}
                   </button>
-                  <p><Link to={"/forgot-password"}>Forgot Password ?</Link></p>
+                  <p><Link to={"/forgot-password"}>{t("auth.forgotPassword")}</Link></p>
 
                   <hr></hr>
-                  <p>Don't have an Account? <Link to={"/signup"}> Sign Up</Link></p>
+                  <p>{t("auth.dontHaveAccount")} <Link to={"/signup"}> {t("auth.signupBtn")}</Link></p>
                  
                 </form>
           

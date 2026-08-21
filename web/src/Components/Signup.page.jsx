@@ -9,6 +9,8 @@ import "../styles/signup.css";
 import variables from "../styles/variables.module.scss";
 import Navbar from "../Layout/Navbar";
 import { IconEye, IconEyeClosed } from "@tabler/icons-react";
+import { useTranslation } from "react-i18next";
+
 const initialValues = {
   name: "",
   email: "",
@@ -17,6 +19,7 @@ const initialValues = {
 };
 
 function SignupPage() {
+  const { t } = useTranslation();
   const [openOtpInput, setOpenOtpInput] = useState(false);
   const [disableButton, setDisableButton] = useState(false);
   const [showPassword,setShowPassword] = useState(false)
@@ -102,13 +105,13 @@ function SignupPage() {
           <div className="signup-container">
             <div className="signup">
               <div className="greetings-div">
-                <h1 className="signup-heading">Welcome to Zooptick!</h1>
-                <small className="signup-info">Please enter your details</small>
+                <h1 className="signup-heading">{t("auth.signupTitle")}</h1>
+                <small className="signup-info">{t("auth.signupSubtitle")}</small>
               </div>
 
               <form onSubmit={handleSubmit} className="form-container">
                 <div className="input-wrapper-text">
-                  <label htmlFor="name">Name</label>
+                  <label htmlFor="name">{t("auth.fullName")}</label>
 
                   <input
                     name="name"
@@ -127,7 +130,7 @@ function SignupPage() {
                   </p>
                 </div>
                 <div className="input-wrapper-text">
-                  <label htmlFor="email">Email</label>
+                  <label htmlFor="email">{t("auth.email")}</label>
                   <input
                     name="email"
                     value={values.email}
@@ -145,7 +148,7 @@ function SignupPage() {
                   </p>
                 </div>
                 <div className="input-wrapper-text">
-                  <label htmlFor="password">Password</label>
+                  <label htmlFor="password">{t("auth.password")}</label>
                     <div className="input-with-button">
                     <input
                       name="password"
@@ -167,7 +170,7 @@ function SignupPage() {
                   </p>
                 </div>
                 <div className="input-wrapper-text">
-                  <label htmlFor="c_password">Confirm Password</label>
+                  <label htmlFor="c_password">{t("auth.confirmPassword")}</label>
                   <input
                     name="c_password"
                     type="password"
@@ -192,7 +195,7 @@ function SignupPage() {
                     <div className="styled-input">
                       <input
                         name="otp"
-                        placeholder="OTP"
+                        placeholder={t("auth.enterOtp") || "OTP"}
                         type="number"
                         value={otp}
                         onChange={(e) => setOtp(e.target.value)}
@@ -203,7 +206,7 @@ function SignupPage() {
                         disabled={disableButton}
                         onClick={handleVerifyOtp}
                       >
-                        Verify
+                        {t("auth.verifyOtp")}
                       </button>
                     </div>
                   </div>
@@ -213,11 +216,11 @@ function SignupPage() {
                   className="normal-button submit-button"
                   disabled={disableButton}
                 >
-                  Sign Up
+                  {t("auth.signupBtn")}
                 </button>
                 <hr></hr>
                 <p>
-                  Already have an account? <Link to={"/login"}> Log In</Link>
+                  {t("auth.alreadyHaveAccount")} <Link to={"/login"}> {t("auth.loginBtn")}</Link>
                 </p>
               </form>
             </div>

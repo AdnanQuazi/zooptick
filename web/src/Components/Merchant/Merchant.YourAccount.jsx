@@ -13,10 +13,12 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import Toast from "../Toast";
 import Error404 from "../Error404";
 import { AuthContext } from "../../Context/AuthContext";
+import { useTranslation } from "react-i18next";
 
 function MerchantAccount() {
   const {BASEURL} = useContext(AuthContext)
   const queryClient = useQueryClient();
+  const { t } = useTranslation();
   const [editable, setEditable] = useState(true);
   const [toast, setToast] = useState({
     isVisible: false,
@@ -95,7 +97,7 @@ function MerchantAccount() {
         />
       )}
       
-      <h1>Your Account</h1>
+      <h1>{t("merchantProfile.title")}</h1>
       {data && <div className="dashboard-containers">
         <div className="basic-details-container">
           <div className="profile-details-container">
@@ -108,10 +110,10 @@ function MerchantAccount() {
           <hr></hr>
           <div className="personal-details-container">
             <form className="form-container" onSubmit={handleSubmit}>
-              <h2 className="form-heading">Personal Information</h2>
+              <h2 className="form-heading">{t("merchantProfile.personalInfo")}</h2>
               <div className="form-inputs-container">
                 <div className="input-wrapper-text">
-                  <label htmlFor="ownerName">Owner Name</label>
+                  <label htmlFor="ownerName">{t("merchantProfile.ownerName")}</label>
                   <input
                     name="ownerName"
                     value={values.ownerName}
@@ -132,7 +134,7 @@ function MerchantAccount() {
                   </p>
                 </div>
                 <div className="input-wrapper-text">
-                  <label htmlFor="shopName">Shop Name</label>
+                  <label htmlFor="shopName">{t("merchantProfile.shopName")}</label>
                   <input
                     name="shopName"
                     value={values.shopName}
@@ -151,7 +153,7 @@ function MerchantAccount() {
                   </p>
                 </div>
                 <div className="input-wrapper-text">
-                  <label htmlFor="email">Email</label>
+                  <label htmlFor="email">{t("auth.email")}</label>
                   <input
                     name="email"
                     value={values.email}
@@ -170,7 +172,7 @@ function MerchantAccount() {
                   </p>
                 </div>
                 <div className="input-wrapper-text">
-                  <label htmlFor="contactNumber">Contact Number</label>
+                  <label htmlFor="contactNumber">{t("merchantProfile.contactNumber")}</label>
                   <div className="styled-input">
                     <div className="input-type">+91</div>
                     <div className="line"></div>
@@ -195,10 +197,10 @@ function MerchantAccount() {
                   </p>
                 </div>
               </div>
-              <h2 className="form-heading">Address</h2>
+              <h2 className="form-heading">{t("merchantProfile.addressTitle")}</h2>
               <div className="form-inputs-container">
                 <div className="input-wrapper-text">
-                  <label htmlFor="state">State</label>
+                  <label htmlFor="state">{t("merchantProfile.state")}</label>
                   {/* <input
                     name="state"
                     value={values.ownerName}
@@ -236,7 +238,7 @@ function MerchantAccount() {
                   </p>
                 </div>
                 <div className="input-wrapper-text">
-                  <label htmlFor="city">City</label>
+                  <label htmlFor="city">{t("merchantProfile.city")}</label>
                   <select
                     name="city"
                     value={values.city}
@@ -261,7 +263,7 @@ function MerchantAccount() {
                   </p>
                 </div>
                 <div className="input-wrapper-text">
-                  <label htmlFor="address">Address</label>
+                  <label htmlFor="address">{t("merchantProfile.address")}</label>
                   <input
                     name="address"
                     value={values.address}
@@ -286,14 +288,14 @@ function MerchantAccount() {
                   type="button"
                   onClick={() => setEditable((editable) => !editable)}
                 >
-                  EDIT
+                  {t("merchantProfile.edit")}
                 </button>
                 <button
                   className="submit-button save-button"
                   type="submit"
                   disabled={editable}
                 >
-                  SAVE CHANGES
+                  {t("merchantProfile.saveChanges")}
                 </button>
               </div>
             </form>

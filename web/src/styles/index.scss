@@ -461,7 +461,13 @@ nav {
         .nav-mobile-contents {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             padding: 0 2rem;
+            
+            .logo {
+                height: 4rem;
+                width: auto;
+            }
         }
     }
 
