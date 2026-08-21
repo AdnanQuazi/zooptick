@@ -235,7 +235,7 @@ function Cart() {
   // handlePaymentVerify Function
   const handlePaymentVerify = async (data) => {
     const options = {
-      key: import.meta.env.RAZORPAY_KEY_ID_PROD,
+      key: import.meta.env.VITE_RAZORPAY_KEY_ID || import.meta.env.VITE_RAZORPAY_KEY_ID_PROD,
       amount: data.amount,
       currency: data.currency,
       name: "Zooptick",
