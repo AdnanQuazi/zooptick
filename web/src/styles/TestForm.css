@@ -1,0 +1,537 @@
+:export {
+  error: #d61d10;
+  light_gray: #eeeeee;
+  dark_gray: #6e6d7a;
+  success: #189b1e;
+  error: #d61d10;
+  warning: #ffa726;
+  info: #29b6f6;
+  accent_color: #a885e8;
+  box_shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  gray: #f4f5fb;
+  text_gray: #c8c8c8;
+}
+
+.table-container {
+  width: 100%;
+  height: auto;
+  overflow-x: auto;
+}
+.table-container .custom-table {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.table-container .custom-table .column {
+  margin: 2rem;
+  background-color: rgb(233, 233, 233);
+}
+.table-container .custom-table .body {
+  margin-top: 1rem;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: white;
+}
+.form-container .apply-changes {
+  display: inline-block;
+  margin-left: auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #a885e8;
+  color: white;
+  background-color: #a885e8;
+}
+.form-container .set {
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+}
+.form-container .subset {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  letter-spacing: 0.3rem;
+  color: gray;
+  font-weight: 600;
+}
+.form-container .set-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 2rem;
+  margin-top: 2rem;
+  border-radius: 1rem;
+}
+.form-container .set-container .set-fields-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.form-container .set-container .set-fields-container .text-array {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.form-container .set-container .set-fields-container .text-array .custom-div {
+  min-width: 30ch;
+  max-width: 31ch;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.form-container .set-container .set-fields-container .text-array .custom-div .input-prefix {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-container .set-container .set-fields-container .text-array .custom-div .input-prefix button {
+  background-color: #d61d10;
+  border: 2px solid #d61d10;
+  background-color: #d61d10;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100%;
+}
+.form-container .set-container .set-fields-container .text-array .custom-div input {
+  border: 2px solid #c8c8c8;
+  font-weight: 500;
+  color: #6e6d7a;
+  padding: 0.8rem 1rem;
+  width: 100%;
+  font-size: 1.6rem;
+  border-left: none;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+.form-container .set-container .set-fields-container .text-array .custom-div:first-of-type input {
+  border-left: 2px solid #c8c8c8;
+  border-radius: 0.5rem;
+}
+.form-container .set-container .set-fields-container .text-array .add-button {
+  background-color: #a885e8;
+  border: 2px solid #a885e8;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: 0.5rem;
+}
+.form-container .set-container .set-fields-container .input-wrapper,
+.form-container .set-container .set-fields-container .input-wrapper-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.form-container .set-container .set-fields-container .input-wrapper label,
+.form-container .set-container .set-fields-container .input-wrapper-text label {
+  font-size: 1.6rem;
+  color: black;
+  font-weight: 500;
+  width: 100%;
+}
+.form-container .set-container .set-fields-container .input-wrapper select,
+.form-container .set-container .set-fields-container .input-wrapper-text select {
+  all: unset;
+}
+.form-container .set-container .set-fields-container .input-wrapper input,
+.form-container .set-container .set-fields-container .input-wrapper select, .form-container .set-container .set-fields-container .input-wrapper textarea,
+.form-container .set-container .set-fields-container .input-wrapper-text input,
+.form-container .set-container .set-fields-container .input-wrapper-text select,
+.form-container .set-container .set-fields-container .input-wrapper-text textarea {
+  resize: none;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 2px solid #c8c8c8;
+  font-size: 1.6rem;
+  padding: 1.2rem 1rem;
+  min-width: 30ch;
+  max-width: 31ch;
+  font-weight: 500;
+  color: #6e6d7a;
+}
+.form-container .set-container .set-fields-container .input-wrapper input .dummy-field,
+.form-container .set-container .set-fields-container .input-wrapper select .dummy-field, .form-container .set-container .set-fields-container .input-wrapper textarea .dummy-field,
+.form-container .set-container .set-fields-container .input-wrapper-text input .dummy-field,
+.form-container .set-container .set-fields-container .input-wrapper-text select .dummy-field,
+.form-container .set-container .set-fields-container .input-wrapper-text textarea .dummy-field {
+  color: #c8c8c8;
+}
+.form-container .set-container .set-fields-container .input-wrapper textarea,
+.form-container .set-container .set-fields-container .input-wrapper-text textarea {
+  width: 100%;
+  font-family: inherit;
+}
+.form-container .set-container .set-fields-container .input-wrapper select,
+.form-container .set-container .set-fields-container .input-wrapper-text select {
+  padding: 1.3rem 3.5em 1.3rem 1em;
+  box-sizing: border-box;
+}
+.form-container .set-container .set-fields-container .input-wrapper input:focus,
+.form-container .set-container .set-fields-container .input-wrapper select:focus,
+.form-container .set-container .set-fields-container .input-wrapper-text input:focus,
+.form-container .set-container .set-fields-container .input-wrapper-text select:focus {
+  border-color: #a885e8;
+}
+.form-container .set-container .set-fields-container .input-wrapper .radio-buttons-group,
+.form-container .set-container .set-fields-container .input-wrapper-text .radio-buttons-group {
+  min-width: 30ch;
+  max-width: 31ch;
+  padding: 1.4rem 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+.form-container .set-container .set-fields-container .input-wrapper .radio-buttons-group .radio-button,
+.form-container .set-container .set-fields-container .input-wrapper-text .radio-buttons-group .radio-button {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.form-container .set-container .set-fields-container .input-wrapper .radio-buttons-group .radio-button input,
+.form-container .set-container .set-fields-container .input-wrapper-text .radio-buttons-group .radio-button input {
+  max-width: none;
+  min-width: 0rem;
+  vertical-align: bottom;
+  width: 3rem;
+  font-size: 3rem;
+  accent-color: #a885e8;
+}
+.form-container .set-container .set-fields-container .input-wrapper .radio-buttons-group .radio-button label,
+.form-container .set-container .set-fields-container .input-wrapper-text .radio-buttons-group .radio-button label {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.form-container .set-container .set-fields-container .input-wrapper .checkbox-buttons-group,
+.form-container .set-container .set-fields-container .input-wrapper-text .checkbox-buttons-group {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.form-container .set-container .set-fields-container .input-wrapper .checkbox-buttons-group .checkbox-button,
+.form-container .set-container .set-fields-container .input-wrapper-text .checkbox-buttons-group .checkbox-button {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.form-container .set-container .set-fields-container .input-wrapper .checkbox-buttons-group .checkbox-button input,
+.form-container .set-container .set-fields-container .input-wrapper-text .checkbox-buttons-group .checkbox-button input {
+  max-width: none;
+  min-width: 0rem;
+  vertical-align: bottom;
+  width: 3rem;
+  font-size: 3rem;
+  accent-color: #a885e8;
+}
+.form-container .set-container .set-fields-container .input-wrapper .checkbox-buttons-group .checkbox-button label,
+.form-container .set-container .set-fields-container .input-wrapper-text .checkbox-buttons-group .checkbox-button label {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.form-container .set-container .set-fields-container .input-wrapper .minimal,
+.form-container .set-container .set-fields-container .input-wrapper-text .minimal {
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 20px) calc(1em + 0.6rem), calc(100% - 15px) calc(1em + 0.6rem), calc(100% - 2.5em) 0.8em;
+  background-size: 5px 5px, 5px 5px, 1px 1.3em;
+  background-repeat: no-repeat;
+}
+.form-container .set-container .set-fields-container .input-wrapper .minimal:focus,
+.form-container .set-container .set-fields-container .input-wrapper-text .minimal:focus {
+  background-image: linear-gradient(45deg, rgb(0, 0, 0) 50%, transparent 50%), linear-gradient(135deg, transparent 50%, rgb(0, 0, 0) 50%), linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 15px), calc(100% - 20px), calc(100% - 2.5em) 0.8em;
+  background-size: 5px 5px, 5px 5px, 1px 1.3em;
+  background-repeat: no-repeat;
+}
+.form-container .set-container .set-fields-container .input-wrapper select:-moz-focusring,
+.form-container .set-container .set-fields-container .input-wrapper-text select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+  display: none;
+}
+.form-container .set-container .set-fields-container .input-wrapper .input-error,
+.form-container .set-container .set-fields-container .input-wrapper-text .input-error {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 1.5rem;
+  font-size: 1.5rem;
+  margin-top: -1rem;
+  color: #d61d10;
+}
+.form-container .set-container .set-fields-container .input-image-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.form-container .set-container .set-fields-container .input-image-wrapper label {
+  font-size: 1.6rem;
+  color: black;
+  font-weight: 500;
+  width: 100%;
+}
+.form-container .set-container .set-fields-container .input-image-wrapper .image-selector {
+  width: 20rem;
+  height: 20rem;
+  border: 1px dashed #a885e8;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  color: #a885e8;
+  border-radius: 1rem;
+  cursor: pointer;
+  background-color: #f4f5fb;
+}
+.form-container .set-container .set-fields-container .input-image-wrapper .image-selector input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.form-container .set-container .set-fields-container .input-image-wrapper .image-selector .input-error {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 1.5rem;
+  font-size: 1.5rem;
+  margin-top: -1rem;
+  color: #d61d10;
+}
+.form-container .set-container .set-fields-container .input-image-wrapper .selected-image {
+  width: 25rem;
+  height: 20rem;
+  background-color: #f4f5fb;
+  border-radius: 1rem;
+  position: relative;
+}
+.form-container .set-container .set-fields-container .input-image-wrapper .selected-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.form-container .set-container .set-fields-container .input-image-wrapper .selected-image button {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: 3;
+  border: 1px solid #d61d10;
+  background-color: #d61d10;
+}
+.form-container .input-error {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 1.5rem;
+  font-size: 1.5rem;
+  margin-top: -1rem;
+  color: #d61d10;
+}
+.form-container .variations-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 2rem;
+  margin-top: 2rem;
+  border-radius: 1rem;
+}
+.form-container .variations-wrapper h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+.form-container .variations-wrapper .variations-table-container {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 1rem;
+  padding: 2rem 0;
+}
+.form-container .variations-wrapper .variations-table-container .variations-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0em;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.form-container .variations-wrapper .variations-table-container .variations-table thead th {
+  color: #6e6d7a;
+  font-weight: 500;
+  font-size: 1.4rem;
+  text-align: start;
+}
+.form-container .variations-wrapper .variations-table-container .variations-table tbody td {
+  padding: 1rem 1rem;
+  font-size: 1.6rem;
+  vertical-align: top;
+}
+.form-container .variations-wrapper .variations-table-container .variations-table tbody td .input-error {
+  font-size: 1.2rem;
+  margin-top: 0;
+}
+.form-container .variations-wrapper .variations-table-container .variations-table tbody td .delete-variant-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #d61d10;
+  background-color: #d61d10;
+  padding: 0.5rem;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+.form-container .variations-wrapper .variations-table-container .variations-table tbody td input,
+.form-container .variations-wrapper .variations-table-container .variations-table tbody td select {
+  min-width: 5rem;
+  padding: 0.8rem;
+  font-family: inherit;
+  font-size: 1.4rem;
+  border-radius: 0.5rem;
+  border: 2px solid #c8c8c8;
+  outline: none;
+}
+.form-container .variations-wrapper .variations-table-container .variations-table tbody td input:focus,
+.form-container .variations-wrapper .variations-table-container .variations-table tbody td select:focus {
+  border-color: #a885e8;
+}
+.form-container .variations-wrapper .variations-table-container .variations-table tbody td .selected-image {
+  width: 10rem;
+  height: 10rem;
+  background-color: #f4f5fb;
+  border-radius: 1rem;
+  position: relative;
+  border-radius: 0.5rem;
+  border: 1px solid #c8c8c8;
+}
+.form-container .variations-wrapper .variations-table-container .variations-table tbody td .selected-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.form-container .variations-wrapper .variations-table-container .variations-table tbody td .selected-image .delete-image {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: 1px solid #d61d10;
+  background-color: #d61d10;
+}
+.form-container .variations-wrapper .variations-table-container .variations-table tbody td .image-selector-button {
+  all: unset;
+  position: relative;
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  border: 1px solid #a885e8;
+  background-color: #a885e8;
+  color: white;
+  padding: 1rem;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.form-container .variations-wrapper .variations-table-container .variations-table tbody td .image-selector-button input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.form-container .variations-wrapper .variations-table-container .variations-table thead {
+  padding: 2rem;
+}
+.form-container .variations-wrapper .variations-table-container .variations-table thead th {
+  padding: 1rem;
+}
+.form-container .variations-wrapper .variations-table-container::-webkit-scrollbar-track {
+  border-radius: 1rem;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f4f5fb;
+}
+.form-container .variations-wrapper .variations-table-container::-webkit-scrollbar {
+  height: 1rem;
+  background-color: #f4f5fb;
+}
+.form-container .variations-wrapper .variations-table-container::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background-color: #a885e8;
+}
+
+.form-submit {
+  background-color: #a885e8;
+  border: 1px solid #a885e8;
+  color: white;
+  font-size: 1.4rem;
+  padding: 1.4rem 3rem;
+  min-width: 30ch;
+  border-radius: 9999px;
+  margin-top: 4rem;
+}
+
+@media (max-width: 576px) {
+  .form-container .set-container .set-fields-container .input-wrapper input,
+  .form-container .set-container .set-fields-container .input-wrapper select {
+    width: 100%;
+    max-width: 100%;
+  }
+  .form-container .set-container .set-fields-container .input-image-wrapper {
+    width: 100%;
+  }
+  .form-container .set-container .set-fields-container .input-image-wrapper .image-selector {
+    width: 100%;
+  }
+  .form-container .set-container .set-fields-container .input-image-wrapper .selected-image {
+    width: 100%;
+  }
+  .form-container .form-submit {
+    width: 100%;
+  }
+  .onboard-status-container {
+    padding: 2rem;
+  }
+  .onboard-status-container img {
+    width: 18;
+    height: 18rem;
+  }
+  .onboard-status-container h1 {
+    font-size: 2.6rem;
+  }
+  .onboard-status-container p {
+    max-width: 100%;
+    text-align: center;
+    color: #c8c8c8;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+  }
+}/*# sourceMappingURL=TestForm.css.map */

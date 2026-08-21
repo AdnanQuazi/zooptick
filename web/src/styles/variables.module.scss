@@ -1,0 +1,28 @@
+$light-gray : #eeeeee;
+$dark-gray : #6e6d7a;
+$text_gray : #c8c8c8;
+$accent-color : #a885e8;
+$dashboard-background : white;
+$dashboard-border : #e9e9e9;
+$error : #d61d10;
+$warning : #ffa726;
+$info : #29b6f6;
+$success : #189b1e;
+
+$nav-height : 9rem;
+$box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+$gray : #f4f5fb;
+
+:export{
+    error : $error;
+    light_gray : $light-gray;
+    dark_gray : $dark-gray;
+    success : $success;
+    error : $error;
+    warning : $warning;
+    info : $info;
+    accent_color : $accent-color;
+    box_shadow : $box-shadow;
+    gray : $gray;
+    text_gray :  $text_gray;
+}   

@@ -1,0 +1,248 @@
+@use "variables.module";
+
+.product-outer-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    width: 100%;
+    min-height: 100vh;
+    background-color: white;
+    .product-container {
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        gap: 2rem;
+
+        .images-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            background-color: white;
+            width: 50%;
+            gap: 1rem;
+
+            img {
+                width: 48%;
+                height: 38rem;
+                object-fit: cover;
+                // border: 1px solid variables.$dark_gray;
+                object-position: center;
+                border-radius: 1rem;
+                box-shadow: variables.$box-shadow;
+                // background-color: variables.$light_gray;
+            }
+        }
+    }
+
+    .details-container {
+        width: 50%;
+
+        .rating-container {
+            margin: 1rem 0rem;
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            padding: 0.4rem 1rem;
+            border: 1px solid variables.$light_gray;
+            width: fit-content;
+            border-radius: 5rem;
+            justify-content: center;
+            align-items: center;
+
+            .average-rating,
+            .total-reviews {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 0.4rem;
+
+                span {
+                    line-height: 1.5rem;
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        hr {
+            border: 1px solid variables.$light_gray;
+            margin: 1rem 0;
+        }
+
+        .price-container {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+
+            .product-price {
+                font-weight: 600;
+                font-family: inherit;
+                font-size: 2.2rem;
+            }
+
+            .product-price-striked {
+                color: variables.$dark_gray;
+                font-family: inherit;
+                font-size: 2rem;
+                font-weight: 400;
+                text-decoration: line-through;
+            }
+        }
+
+        .tax-note {
+            font-size: 1.4rem;
+            color: variables.$success;
+            font-weight: 400;
+        }
+
+        .variations-container-size,.variations-container-color {
+            margin: 2rem 0;
+
+            h2 {
+                font-size: 1.8rem;
+                font-weight: 600;
+            }
+
+            .variations-data-container {
+                margin-top: 1rem;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 1rem;
+                margin: 2rem 0;
+
+                button {
+                    background-color: white;
+                    font-size: 1.5rem;
+                    min-width: 5rem;
+                    width: fit-content;
+                    height: fit-content;
+                    padding: 1rem;
+                    border-radius: 5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: none;
+                    outline-width: 2px;
+                    outline-style: solid;
+                    cursor: pointer;
+                    outline-offset: 1px;
+                    font-family: inherit;
+                    font-weight: 600;
+                }
+                .color-buttons{
+                    border-radius: 1rem;
+                    width: fit-content;
+                    padding: 1rem;
+                    font-weight: 600;
+                    font-family: inherit;
+                    outline-offset: 0;
+                }
+            }
+        }
+        .main-buttons-container{
+            width: 100%;
+            display: flex;
+            gap: 1rem;
+            margin-top: 3rem;
+            .add-to-cart{
+                width: 60%;
+                font-size: 1.8rem;
+                font-weight: 600;
+                padding: 1.5rem 0;
+            }
+            .wishlist{
+                width: 40%;
+                font-size: 1.8rem;
+                font-weight: 600;
+                padding: 1.5rem 0;
+            }
+        }
+        hr{
+            margin: 2rem 0;
+        }
+        .services-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            margin-top: 1rem;
+            width: 100%;
+            .service{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+                img{
+                    width: 40px;
+                    height: 40px;
+                }
+                p{
+                    font-size: 1.6rem;
+                    color: variables.$accent-color;
+                    text-align: center;
+                }
+            }
+        }
+        .services-note{
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            font-size: 1.2rem;
+            margin: 2rem 0;
+        }
+        .description-container{
+            margin-top: 3rem;
+            h1{
+                font-family: inherit;
+                font-weight: 600;
+                font-size: 1.8rem;
+            }
+            a{
+                font-weight: 600;
+                font-size: 1.8rem;
+                text-decoration: none;
+                color: variables.$accent-color;
+            }
+            p{
+                font-weight: 400;
+                font-size: 1.8rem;
+                color: rgb(39, 39, 39);
+            }
+        }
+    }
+}
+@media (max-width : 1100px) {
+    .product-outer-container{
+        .product-container{
+            flex-direction: column;
+
+            .images-container{
+                width: 100%;
+                height: auto;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                scroll-snap-stop: always;
+                padding: 1rem;
+                img{
+                    box-shadow: none;   
+                    width: 100%;
+                    height: 60vh;
+                    aspect-ratio: 16/9;
+                    scroll-snap-align: center;
+                    scroll-snap-stop: always;
+                }
+            }
+            .images-container::-webkit-scrollbar{
+                width: 0 !important;
+            }
+            .details-container{
+                width: 100%;
+                padding: 2rem;
+            }
+        }
+    }
+}

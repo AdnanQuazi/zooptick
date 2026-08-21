@@ -1,0 +1,54 @@
+:export {
+  error: #d61d10;
+  light_gray: #eeeeee;
+  dark_gray: #6e6d7a;
+  success: #189b1e;
+  error: #d61d10;
+  warning: #ffa726;
+  info: #29b6f6;
+  accent_color: #a885e8;
+  box_shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  gray: #f4f5fb;
+  text_gray: #c8c8c8;
+}
+
+.contact-us-outer-container {
+  width: 100%;
+  height: calc(100vh - 9rem);
+  margin-top: 4rem;
+}
+.contact-us-outer-container h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+.contact-us-outer-container .contact-us-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 2rem;
+  gap: 4rem;
+  margin-top: 2rem;
+}
+.contact-us-outer-container .contact-us-container .contact {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  gap: 5rem;
+  border-radius: 1rem;
+}
+.contact-us-outer-container .contact-us-container .contact .icon-container {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem 1rem 1rem 1rem;
+}
+.contact-us-outer-container .contact-us-container .contact .contact-data {
+  font-size: 2.2rem;
+  font-weight: 600;
+}/*# sourceMappingURL=contactus.css.map */

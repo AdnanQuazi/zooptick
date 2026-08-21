@@ -1,0 +1,19 @@
+@use "variables.module";
+.admin-dashboard-container{
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5rem;
+    .details-div{
+        width: 40rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        
+        box-shadow: variables.$box-shadow;
+        .key{
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+    }
+}

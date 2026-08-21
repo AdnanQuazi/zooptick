@@ -1,0 +1,405 @@
+@use "variables.module";
+
+.store-container {
+  width: 100%;
+  min-height: 100vh;
+
+  .store-image-container {
+    position: relative;
+    width: 100%;
+    height: 50rem;
+    /* Adjust height as needed */
+    overflow: hidden;
+    border-bottom-left-radius: 50% 20%;
+    border-bottom-right-radius: 50% 20%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+  }
+}
+
+.card-container {
+  width: 100%;
+  min-height: 100vh;
+  /* Adjust the width as needed */
+  /* Adjust the radius for the overall card */
+  overflow: auto;
+  /* Optional: Add some shadow for a 3D effect */
+  background-color: white;
+  /* Background color for the text area */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: hidden;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  /* Adjust height as needed */
+  overflow: hidden;
+  // border-bottom-left-radius: 50% 20%;
+  // border-bottom-right-radius: 50% 20%;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  max-height: 50vh;
+  object-fit: contain;
+  /* Ensures the image covers the container */
+}
+
+.shop-logo {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 99999px;
+}
+
+.store-details-container {
+  padding: 2rem;
+  width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+
+}
+
+.text-container {
+  // padding: 2rem;
+  border-radius: 1rem;
+  // box-shadow: variables.$box-shadow;
+  background-color: white;
+  text-align: start;
+  z-index: 4;
+  position: relative;
+  width: 100%;
+
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      font-size: 1.6rem;
+      font-weight: 400;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      color: variables.$text-gray;
+    }
+  }
+
+  .store-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.5rem;
+
+    .show-timings {
+      font-size: 1.6rem;
+      font-weight: 500;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      border-radius: 1rem;
+      border: 1px solid variables.$accent-color;
+      background-color: variables.$accent-color;
+      color: white;
+      margin-top: 1rem;
+    }
+
+    p,
+    a {
+      font-size: 1.6rem;
+      font-weight: 500;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 0.5rem;
+      color: variables.$text-gray;
+    }
+
+    a {
+      background-color: white;
+      color: white;
+      font-size: 1.8rem;
+      font-weight: 500;
+      border-radius: 1rem;
+      // padding: 1rem 1rem;
+      text-decoration: none;
+      color: variables.$accent-color;
+    }
+  }
+}
+
+.get-started-button {
+  background-color: #4CAF50;
+  /* Green */
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.get-started-button:hover {
+  background-color: #45a049;
+  /* Darker green */
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+  justify-content: center;
+  align-items: flex-start;
+
+  .store-name-heading {
+    font-size: 3rem;
+  }
+}
+
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 99999px;
+  padding: 1.6rem 2.2rem;
+  // box-shadow: variables.$box-shadow;
+  background-color: variables.$gray;
+  width: 60ch;
+
+
+  input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    font-weight: 400;
+    font-size: 1.4rem;
+  }
+}
+
+.products-header-footer-container {
+  width: 100%;
+  height: auto;
+
+  .product-header {
+    font-size: 1.6rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid variables.$light-gray;
+    height: 5.6rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      margin-top: 1rem;
+    }
+  }
+}
+
+.filter-product-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-top: 3rem;
+  padding: 0 10rem;
+
+  .filters {
+    min-width: 30rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-right: 1px solid variables.$light-gray;
+    padding: 1rem;
+
+    .filter-header {
+      font-size: 2rem;
+    }
+
+    .filters-heading {
+      border-bottom: 1px solid variables.$light-gray;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      button {
+        border: none;
+        font-size: 1.6rem;
+        padding: 1rem 0;
+      }
+    }
+
+    .filter {
+      margin: 2rem 0 0 0;
+      width: 100%;
+      height: 25rem;
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      .price-input-container {
+        width: 100%;
+        margin-top: 1rem;
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-start;
+        align-items: center;
+
+        input {
+          -webkit-appearance: none;
+          width: 100%;
+          border-radius: 999px;
+          height: 1rem;
+          background: variables.$gray;
+          color: variables.$accent-color;
+        }
+
+        input::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 1.8rem;
+          height: 1.8rem;
+          border-radius: 9999px;
+          background: variables.$accent-color;
+          cursor: pointer;
+        }
+
+        input::-moz-range-thumb {
+          width: 25px;
+          height: 25px;
+          background: #04AA6D;
+          cursor: pointer;
+        }
+
+        p {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 2rem;
+          font-weight: 500;
+
+        }
+      }
+
+      ul {
+        margin-top: 1rem;
+
+        li {
+          list-style: none;
+          padding: 0.2rem 0;
+          display: flex;
+          justify-content: flex-start;
+          gap: 1rem;
+          align-items: center;
+          font-size: 1.4rem;
+          color: black;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          width: 100%;
+          font-weight: 400;
+
+          input {
+            min-width: 2rem;
+            min-height: 2rem;
+          }
+        }
+      }
+
+      select {
+        font-family: inherit;
+        width: 100%;
+        font-size: 1.6rem;
+        padding: 1rem 1rem;
+        border: 2px solid variables.$text-gray;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+}
+
+.filter-sorting-button-group {
+  position: fixed;
+  bottom: 0;
+  background-color: variables.$accent-color;
+  width: 100%;
+  right: 0;
+  // padding: 2rem;
+
+  z-index: 5;
+  display: none;
+
+  button {
+    width: 100%;
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: variables.$accent-color;
+    color: white;
+    border: none;
+    font-size: 1.6rem;
+    font-family: inherit;
+
+  }
+}
+
+@media (max-width : 768px) {
+  .filter-product-container {
+    padding: 0 2rem;
+    position: relative;
+
+    .filters {
+      position: fixed;
+      background-color: white;
+      z-index: 4;
+      bottom: -100%;
+      right: 0;
+      box-shadow: variables.$box-shadow;
+      width: 100%;
+      max-height: 60vh;
+      overflow-y: auto;
+      transition: all 0.5s cubic-bezier(0, 1.12, 0.58, 1);
+      padding-bottom: 4rem;
+
+      .filter {
+        max-height:50rem;
+      }
+    }
+  }
+
+  .filter-sorting-button-group {
+    display: block;
+  }
+
+}
+
+// @media (max-width : 576px) {
+//   .text-container{
+//     border-top-left-radius: 140% 220%;
+//     border-top-right-radius: 140% 220%;
+//   }
+// }

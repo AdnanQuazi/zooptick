@@ -1,0 +1,270 @@
+:export {
+  error: #d61d10;
+  light_gray: #eeeeee;
+  dark_gray: #6e6d7a;
+  success: #189b1e;
+  error: #d61d10;
+  warning: #ffa726;
+  info: #29b6f6;
+  accent_color: #a885e8;
+  box_shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  gray: #f4f5fb;
+  text_gray: #c8c8c8;
+}
+
+.search-box-group {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.search-box-group .search-products-container, .search-box-group .search-store-container {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 9999px;
+}
+.search-box-group .search-products-container .location-container, .search-box-group .search-store-container .location-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  padding-right: 0;
+}
+.search-box-group .search-products-container .location-container .detect-current-location, .search-box-group .search-store-container .location-container .detect-current-location {
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.6rem;
+  border: none;
+  gap: 1rem;
+  border-radius: 999px;
+  color: #a885e8;
+}
+.search-box-group .search-products-container .location-container p, .search-box-group .search-store-container .location-container p {
+  font-size: 1.6rem;
+  max-width: 15ch;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.search-box-group .search-products-container .location-container button, .search-box-group .search-store-container .location-container button {
+  padding: 0;
+}
+.search-box-group .search-products-container .location-container .location-menu, .search-box-group .search-store-container .location-container .location-menu {
+  position: absolute;
+  top: 100%;
+  margin-top: 1rem;
+  background-color: white;
+  border-radius: 999px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: -moz-max-content;
+  width: max-content;
+  left: 0;
+  z-index: 4;
+}
+.search-box-group .search-products-container .location-container .location-menu .detect-current-location, .search-box-group .search-store-container .location-container .location-menu .detect-current-location {
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.8rem;
+  border: none;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 999px;
+  color: #a885e8;
+}
+.search-box-group .search-products-container .location-container .location-menu-enter, .search-box-group .search-store-container .location-container .location-menu-enter {
+  animation: slideIn 0.1s forwards;
+  pointer-events: auto;
+}
+.search-box-group .search-products-container .location-container .location-menu-exit, .search-box-group .search-store-container .location-container .location-menu-exit {
+  pointer-events: none;
+  animation: slideOut 0.1s forwards;
+}
+.search-box-group .search-products-container hr, .search-box-group .search-store-container hr {
+  height: 70%;
+  margin: 0 1rem;
+  border: none;
+  border-left: 1px solid #c8c8c8;
+  color: white;
+}
+.search-box-group .search-products-container .search-box-products, .search-box-group .search-products-container .search-box-store, .search-box-group .search-store-container .search-box-products, .search-box-group .search-store-container .search-box-store {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-box-group .search-products-container .search-box-products input, .search-box-group .search-products-container .search-box-store input, .search-box-group .search-store-container .search-box-products input, .search-box-group .search-store-container .search-box-store input {
+  width: auto;
+  background-color: white;
+  border: none;
+  font-weight: 400;
+  font-size: 1.6rem;
+  width: 20ch;
+  max-width: 30ch;
+}
+.search-box-group .search-products-container .search-box-products .search-button, .search-box-group .search-products-container .search-box-store .search-button, .search-box-group .search-store-container .search-box-products .search-button, .search-box-group .search-store-container .search-box-store .search-button {
+  color: rgb(255, 255, 255);
+  border-radius: 9999px;
+  background-color: #a885e8;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+}
+.search-box-group .search-store-container {
+  position: relative;
+}
+.search-box-group .search-store-container .search-box-store {
+  padding: 0 1.5rem;
+  padding-right: 0;
+}
+.search-box-group .search-store-container .store-results-container {
+  position: absolute;
+  top: 100%;
+  margin-top: 1rem;
+  width: 100%;
+  background-color: white;
+  right: 0;
+  padding: 1rem;
+  border-radius: 2rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  min-width: 40rem;
+  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  max-height: 50rem;
+  overflow: auto;
+}
+.search-box-group .search-store-container .store-results-container .store {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.search-box-group .search-store-container .store-results-container .store img {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 999px;
+}
+.search-box-group .search-store-container .store-results-container .store .details-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.3rem;
+}
+.search-box-group .search-store-container .store-results-container .store .details-container .details-status {
+  display: flex;
+  justify-content: space-between;
+}
+.search-box-group .search-store-container .store-results-container .store .details-container .details-status p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.search-box-group .search-store-container .store-results-container .store .details-container .details-status .name {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.search-box-group .search-store-container .store-results-container .store .details-container p {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.search-box-group .search-store-container .store-results-container .store .details-container .name {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.search-box-group .search-store-container .store-results-container .store .details-container .contact-number {
+  font-size: 1.4rem;
+}
+.search-box-group .search-store-container .store-results-container .store .details-container .address {
+  font-size: 1.4rem;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.search-box-group .search-store-container .store-results-container .store .store-status {
+  font-size: 1.4rem;
+  width: 100%;
+}
+.search-box-group .search-store-container .store-results-container .store:hover {
+  background-color: #f4f5fb;
+}
+.search-box-group .search-store-container .store-results-container::-webkit-scrollbar-track {
+  border-radius: 1rem;
+  -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+  background-color: #f4f5fb;
+}
+.search-box-group .search-store-container .store-results-container::-webkit-scrollbar {
+  height: auto;
+  width: 1.2rem;
+  background-color: #f4f5fb;
+}
+.search-box-group .search-store-container .store-results-container::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background-color: #a885e8;
+}
+
+@keyframes slideIn {
+  0% {
+    top: 80%;
+    opacity: 0;
+  }
+  100% {
+    top: 100%;
+    opacity: 1;
+  }
+}
+@keyframes slideOut {
+  0% {
+    top: 100%;
+    opacity: 1;
+  }
+  100% {
+    top: 80%;
+    opacity: 0;
+  }
+}
+@media (max-width: 768px) {
+  .search-box-group .search-products-container {
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+  .search-box-group .search-products-container .location-container p {
+    max-width: 10ch;
+  }
+  .search-box-group .search-products-container .search-box-products {
+    width: 100%;
+  }
+  .search-box-group .search-products-container .search-box-products input {
+    width: 60%;
+  }
+  .search-box-group .search-store-container .search-box-store {
+    width: 100%;
+  }
+  .search-box-group .search-store-container {
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+  .search-box-group .search-store-container .store-results-container {
+    min-width: 100%;
+  }
+}/*# sourceMappingURL=searchbar.css.map */

@@ -1,0 +1,199 @@
+:export {
+  error: #d61d10;
+  light_gray: #eeeeee;
+  dark_gray: #6e6d7a;
+  success: #189b1e;
+  error: #d61d10;
+  warning: #ffa726;
+  info: #29b6f6;
+  accent_color: #a885e8;
+  box_shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  gray: #f4f5fb;
+  text_gray: #c8c8c8;
+}
+
+.bookings {
+  padding: 2rem;
+}
+.bookings .bookings-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+.bookings .bookings-container .order-container {
+  width: 100%;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 2px solid #f4f5fb;
+}
+.bookings .bookings-container .order-container .header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bookings .bookings-container .order-container .header .store-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: -moz-max-content;
+  width: max-content;
+  gap: 1rem;
+}
+.bookings .bookings-container .order-container .header .store-details-container .store-image img {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 10000rem;
+  border: none;
+}
+.bookings .bookings-container .order-container .header .store-details-container .store-name-container {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.bookings .bookings-container .order-container .header .store-details-container .store-name-container p, .bookings .bookings-container .order-container .header .store-details-container .store-name-container h1 {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+.bookings .bookings-container .order-container .header .store-details-container .store-name-container .store-name {
+  font-size: 2rem;
+}
+.bookings .bookings-container .order-container .header .store-details-container .store-name-container .store-address, .bookings .bookings-container .order-container .header .store-details-container .store-name-container .store-contact {
+  font-size: 1.3rem;
+  color: #6e6d7a;
+}
+.bookings .bookings-container .order-container .header .order-status {
+  font-size: 1.3rem;
+  padding: 0.5rem 1rem;
+  background-color: aqua;
+  color: white;
+  border-radius: 9999px;
+  width: -moz-max-content;
+  width: max-content;
+}
+.bookings .bookings-container .order-container .body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+.bookings .bookings-container .order-container .body .order {
+  display: flex;
+  padding: 1rem;
+  gap: 2rem;
+  width: 100%;
+  border-radius: 1rem;
+  border: 2px solid #f4f5fb;
+}
+.bookings .bookings-container .order-container .body .order .order-image-container img {
+  width: 13rem;
+  height: 13rem;
+  border-radius: 1rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.bookings .bookings-container .order-container .body .order .order-details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.bookings .bookings-container .order-container .body .order .order-details-container .product-name {
+  font-size: 2rem;
+  max-width: 20ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.bookings .bookings-container .order-container .body .order .order-details-container .order-variants-container {
+  width: 100%;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.bookings .bookings-container .order-container .body .order .order-details-container .order-variants-container .variant {
+  gap: 0.8rem;
+  display: flex;
+}
+.bookings .bookings-container .order-container .body .order .order-details-container .order-variants-container .variantAttr {
+  color: #6e6d7a;
+  font-size: 1.6rem;
+}
+.bookings .bookings-container .order-container .body .order .order-details-container .order-variants-container .variantVal {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.bookings .bookings-container .order-container .body .order .order-details-container .price-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+.bookings .bookings-container .order-container .body .order .order-details-container .quantity-container {
+  width: 100%;
+  display: flex;
+  gap: 1.5rem;
+}
+.bookings .bookings-container .order-container .body .order .order-details-container .quantity-container .variantAttr {
+  color: #6e6d7a;
+  font-size: 1.6rem;
+}
+.bookings .bookings-container .order-container .body .order .order-details-container .quantity-container .variantVal {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.bookings .bookings-container .order-container .footer .summary-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 2rem;
+}
+.bookings .bookings-container .order-container .footer .summary-container .totals {
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-self: flex-end;
+}
+.bookings .bookings-container .order-container .footer .summary-container .totals .sub-total, .bookings .bookings-container .order-container .footer .summary-container .totals .discount, .bookings .bookings-container .order-container .footer .summary-container .totals .grand-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.6rem;
+}
+.bookings .bookings-container .order-container .footer .summary-container .price-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+@media (max-width: 576px) {
+  .bookings .bookings-container .order-container .header {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .bookings .bookings-container .order-container .body .order .order-details-container .product-name {
+    width: 100%;
+    white-space: wrap;
+  }
+  .bookings .bookings-container .order-container .body .order .order-image-container img {
+    height: 100%;
+  }
+}/*# sourceMappingURL=bookings.css.map */

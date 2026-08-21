@@ -1,0 +1,43 @@
+@use "variables.module";
+.contact-us-outer-container{
+    width: 100%;
+    height: calc(100vh - variables.$nav-height);
+    margin-top: 4rem;
+    h1{
+        font-size: 3rem;
+        font-weight: 600;
+        
+    }
+    .contact-us-container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 2rem;
+        gap: 4rem;
+        margin-top: 2rem;
+        .contact{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            gap: 5rem;
+            border-radius: 1rem;
+            .icon-container{
+                box-shadow: variables.$box-shadow;
+                width: 15rem;
+                height: 15rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 1rem 1rem 1rem 1rem;
+
+            }
+            .contact-data{
+                font-size: 2.2rem;
+                font-weight: 600;
+            }
+        }
+    }
+}

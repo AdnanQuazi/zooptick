@@ -1,0 +1,138 @@
+@use "variables.module";
+.signup-outer-container{
+    width: 100%;
+    height: calc(100vh - variables.$nav-height);
+    .signup-container{
+        display: grid;
+        place-items: center;
+        width: 100%;
+        height: calc(100vh - variables.$nav-height);
+        padding: 2rem;
+        .signup{
+            width: 50rem;
+            height: auto;
+            box-shadow: variables.$box-shadow;
+            padding: 2rem 6rem;
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .greetings-div{
+                width: 100%;
+                .signup-heading{
+                    width: 100%;
+                    text-align: center;
+                    font-size: 3rem;
+                }
+                .signup-info{
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 1.2rem;
+                    font-family: inherit;
+                    color: variables.$dark-gray;
+                }
+            }
+            .form-container {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                margin-top: 4rem;
+                gap: 1rem;
+
+                .input-wrapper-text {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+
+                    label {
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                        // color: variables.$dark_gray;
+                        color: black;
+                    }
+
+                    input,
+                    select {
+                        all: unset;
+                        box-sizing: border-box;
+                        margin: 0.5rem 0 0.5rem 0;
+                        font-size: 1.8rem;
+                        font-weight: 400;
+                        color: variables.$dark_gray;
+                        border: 1px solid variables.$light_gray;
+                        padding: 1rem;
+                        border-radius: 1rem;
+                        width: 100%;
+                    }
+
+                    .input-error-text {
+                        height: 1.5ch;
+                        width: 45ch;
+                        font-size: 1.3rem;
+                        color: variables.$error;
+                    }
+
+                    .styled-input {
+                        margin: 0.5rem 0 0.5rem 0;
+                        font-size: 1.8rem;
+                        font-weight: 500;
+                        color: variables.$dark_gray;
+                        border: 1px solid variables.$light_gray;
+                        padding: 1rem;
+                        border-radius: 1rem;
+                        display: flex;
+                        gap: 1rem;
+
+                        input {
+                            all: unset;
+                            width: 100%;
+                        }
+
+                        .line {
+                            border-left: 0.1px solid variables.$light_gray;
+                            height: auto;
+
+                        }
+                        .verify-otp-button{
+                            background-color: variables.$success;
+                            border: none;
+                            color: white;
+                            padding: 0.5rem 1rem;
+                            text-align: center;
+                            border-radius: 0.5rem;
+                            font-size: 1.6rem;
+                           
+                        }
+                    }
+                }
+                .submit-button{
+                    width: 100%;
+                    margin-top: 2rem;
+                }
+                hr{
+                    width: 100%;
+                    border: 1px solid variables.$light-gray;
+                    margin: 1rem 0rem;
+                }
+                p{
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+@media (max-width : 576px) {
+    .signup-outer-container .signup-container .signup {
+        width: 100%;
+        padding: 2rem;
+    }
+    .signup-outer-container .signup-container .signup .form-container .input-wrapper-text .input-error-text{
+        width: 100%;
+    }
+}
