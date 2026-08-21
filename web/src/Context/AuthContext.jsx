@@ -6,7 +6,7 @@ import { replace } from "formik";
 export const AuthContext = createContext({});
 
 export function AuthContextProvider({ children }) { 
-  const BASEURL = "http://localhost:3000"
+  const BASEURL = import.meta.env.VITE_API_URL || "http://localhost:3000";
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();

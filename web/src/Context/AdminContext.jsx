@@ -6,7 +6,7 @@ export const AdminAuthContext = createContext({});
 
 
 export function AdminAuthContextProvider({ children }) { 
-    const BASEURL = "https://zooptiq-zx3z.vercel.app"
+    const BASEURL = import.meta.env.VITE_API_URL || "http://localhost:3000";
   const [admin, setAdmin] = useState(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();

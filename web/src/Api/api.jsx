@@ -1,6 +1,6 @@
 import axios from "axios";
 axios.defaults.withCredentials = true;
-const url = "http://localhost:3000";
+const url = import.meta.env.VITE_API_URL || "http://localhost:3000";
 const headers = {
   "Content-Type": "application/json",
 };
