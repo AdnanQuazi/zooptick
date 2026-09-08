@@ -3546,9 +3546,12 @@ app.use((err, req, res, next) => {
 });
 
 const server = require("http").createServer(app);
-server.listen(port, () => {
-  console.log("Conection is established at " + port);
-});
+
+if (require.main === module) {
+  server.listen(port, () => {
+    console.log("Connection is established at " + port);
+  });
+}
 
 function formatToLocalTime(isoString) {
   const date = new Date(isoString);
@@ -3575,3 +3578,5 @@ function formatToLocalTime(isoString) {
 
   return `${day}/${month}/${year} - ${hour}:${minute} ${period}`;
 }
+
+module.exports = app;
