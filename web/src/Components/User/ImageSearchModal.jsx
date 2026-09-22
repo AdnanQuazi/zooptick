@@ -318,7 +318,7 @@ export default function ImageSearchModal({ isOpen, onClose }) {
                     className="visual-product-card"
                     onClick={() => {
                       onClose();
-                      navigate(`/store/?_id=${product.shopId}`);
+                      navigate(`/product/?_id=${product.productId}`);
                     }}
                   >
                     <div className="card-image-wrap">
@@ -333,6 +333,7 @@ export default function ImageSearchModal({ isOpen, onClose }) {
 
                     <div className="card-details">
                       <h5>{product.productName}</h5>
+                      <p className="card-description">{product.desc}</p>
                       <p className="card-shop-name">{product.shopName}</p>
                       <div className="card-price-row">
                         <span className="card-price">
